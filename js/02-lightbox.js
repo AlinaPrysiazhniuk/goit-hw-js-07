@@ -12,7 +12,6 @@ function creatGallery(images) {
             class="gallery__image"
             src="${image.preview}"
             alt="${image.description}"
-            title="beautiful images"
          />
          </a>`
     )
@@ -33,9 +32,8 @@ function onImageClick(event) {
   }
 
   const lightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-
-    animationSpeed: 1000,
+    captionsData: "alt",
+    captionDelay: 250,
   });
 
   galleryContainer.addEventListener("keydown", (event) => {
