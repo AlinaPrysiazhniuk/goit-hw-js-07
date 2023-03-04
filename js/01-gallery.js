@@ -42,6 +42,9 @@ function onImageClick(event) {
   instance.show();
 
   if (instance.show() === true) {
+    window.addEventListener("scroll", (event) => {
+      window.scrollTo(0, 0);
+    });
     galleryContainer.addEventListener("keydown", (event) => {
       if (event.code === "Escape") {
         instance.close();
