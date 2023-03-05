@@ -36,9 +36,12 @@ function onImageClick(event) {
     captionDelay: 250,
   });
 
-  galleryContainer.addEventListener("keydown", (event) => {
+  galleryContainer.addEventListener("keydown", offEscapeClose);
+
+  function offEscapeClose() {
     if (event.code === "Escape") {
       instance.close();
+      galleryContainer.removeEventListener("click", offEscapeClose);
     }
-  });
+  }
 }
